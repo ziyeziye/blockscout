@@ -48,7 +48,7 @@ export default function (container, newElements, { key, horizontal } = {}) {
   // update kept items
   currentList = currentList.map(({ el }, i) => ({
     id: overlap[i] && overlap[i].id,
-    el: el.outerHTML === overlap[i] && overlap[i].el && overlap[i].el.outerHTML ? el : morph(el, overlap[i].el)
+    el: el.outerHTML === overlap[i] && overlap[i].el && overlap[i].el.outerHTML ? el : morph(el, overlap[i] && overlap[i].el)
   }))
 
   // add new items
