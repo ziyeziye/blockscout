@@ -3221,7 +3221,6 @@ defmodule Explorer.Chain do
     fetched_transactions =
       if paging_options.page_number == 1 do
         paging_options.page_size
-        |> Kernel.+(1)
         |> Transactions.take_enough()
         |> case do
           nil ->
