@@ -294,7 +294,7 @@ defmodule Explorer.SmartContract.Solidity.VerifierTest do
     # flaky test
     test "returns error when bytecode doesn't match", %{contract_code_info: contract_code_info} do
       contract_address = insert(:contract_address, contract_code: contract_code_info.bytecode)
-      
+
       :transaction
       |> insert(created_contract_address_hash: contract_address.hash)
       |> with_block(status: :ok)
